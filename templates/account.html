@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Bank Palsu - Account</title>
+    <link rel="stylesheet" href="/static/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div class="bank-header">
+        <div class="container">
+            <div class="bank-logo">
+                <i class="fas fa-university"></i>
+                <span>BANK HARAPAN PALSU</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="account-header">
+            <h1><i class="fas fa-user-circle"></i> Account Information</h1>
+            <a href="/login" class="logout-btn"><i class="fas fa-sign-out-alt"></i> Logout</a>
+        </div>
+
+        <div class="account-info">
+            <div class="info-row">
+                <div class="info-label">Account Number:</div>
+                <div class="info-value">{{ user[0] }}</div>
+            </div>
+            
+            <div class="info-row">
+                <div class="info-label">Account Holder:</div>
+                <div class="info-value">{{ user[1] }}</div>
+            </div>
+            
+            <div class="info-row">
+                <div class="info-label">Account Balance:</div>
+                <div class="info-value balance">Rp{{ "{:,}".format(user[3]) }}</div>
+            </div>
+            
+            {% if flag %}
+            <div class="flag-section">
+                <h3><i class="fas fa-flag"></i> Administrator Flag:</h3>
+                <p>{{ flag }}</p>
+            </div>
+            {% endif %}
+        </div>
+    </div>
+</body>
+</html>
